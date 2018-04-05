@@ -1,0 +1,32 @@
+<h1>Thanks for ordering, <%= Order.last.customer %>!</h1>
+
+<h2>Your order was processed as the following:</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th> Ribs </th>
+			<th> Pulled Pork </th>
+			<th> Brisket </th>
+			<th> Chicken </th>
+			<th> Loaded Fries </th>
+			<th> Baked Potato </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td> <%= Order.last.ribs %> </td>
+			<td> <%= Order.last.pork %> </td>
+			<td> <%= Order.last.brisket %> </td>
+			<td> <%= Order.last.chicken %> </td>
+			<td> <%= Order.last.fries %> </td>
+			<td> <%= Order.last.potato %> </td>
+		</tr>
+	</tbody>
+</table>
+
+
+<p>Your total order cost will be $<%= Order.last.cost %></p>
+
+<%= button_to "Go back to homepage", root_path%>

@@ -1,0 +1,56 @@
+<h1>Welcome to the the BBQ Grill! </h1>
+<p>Home of the best ribs in the east</p>
+
+
+
+<p>Here's our Menu</p>
+
+
+<h2>Ribs</h2>
+<p>Hearty full slab of St. Louis style spare ribs! $15.99</p>
+<p> <%= image_tag "Ribs.jpg", :size => "480x360"%> </p>
+
+<h2>Pulled Pork</h2>
+<p>Whopping full pound of pulled pork shoulder! $9.99</p>
+<p> <%= image_tag "PulledPork.jpg", :size => "480x360"%> </p>
+
+<h2>Brisket</h2>
+<p>One whole pound of sliced barbecued beef brisket! $10.99</p>
+<p> <%= image_tag "Brisket.jpg", :size => "480x360"%> </p>
+
+<h2>Barbecue Chicken</h2>
+<p>A full barbecue roast chicken! $9.99 </p>
+<p> <%= image_tag "Chicken.jpg", :size => "480x360"%> </p>
+
+<h2>Loaded Fries</h2>
+<p>Side order of loaded fries with shredded cheese, pulled pork, and barbecue sauce! $4.99</p>
+<p> <%= image_tag "LoadedFries.jpg", :size => "480x360"%> </p>
+
+<h2>Baked Potato</h2>
+<p>Side order of a baked potato with cheese, bacon bits, and sour cream! $2.99</p>
+<p> <%= image_tag "BakedPotato.jpg", :size => "480x360"%> </p>
+
+
+
+<h3>Fill out the information below to order!</h3>
+
+<%= simple_form_for @order do |f| %>
+	<%= f.input :customer, label: "Your Name: " %>
+	<%= f.input :address, label: "Your Address: " %>
+	<%= f.input :phone, label: "Your Phone Number: " %>
+	<%= f.input :ribs, as: 'integer', label: "Ribs: " %>
+	<%= f.input :pork, as: 'integer', label: "Puled Pork: " %>
+	<%= f.input :brisket, as: 'integer', label: "Brisket: " %>
+	<%= f.input :chicken, as: 'integer', label: "Barbecue Chicken: " %>
+	<%= f.input :fries, as: 'integer', label: "Loaded Fries: " %>
+	<%= f.input :potato, as: 'integer', label: "Baked Potato: " %>
+	<%= f.submit %>
+
+<% end %>
+
+<h3>Would you like to see what orders have been placed?</h3>
+<%= button_to "See orders", overview_path%>
+
+
+
+

@@ -1,0 +1,42 @@
+<h1>Here are all of the orders currently placed:</h1>
+<table>
+	<thead>
+		<tr>
+			<th>  Customer </th>
+			<th>  Address </th>
+			<th>  Phone </th>
+			<th>  Ribs </th>
+			<th>  Pulled Pork </th>
+			<th>  Brisket </th>
+			<th>  Chicken </th>
+			<th>  Loaded Fries </th>
+			<th>  Baked Potato </th>
+			<th>  Cost </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @allOrders.each do |order| %>
+			<tr>
+				<td> <%= order.customer %> </td>
+				<td> <%= order.address %> </td>
+				<td> <%= order.phone %> </td>
+				<td> <%= order.ribs %> </td>
+				<td> <%= order.pork %> </td>
+				<td> <%= order.brisket %> </td>
+				<td> <%= order.chicken %> </td>
+				<td> <%= order.fries %> </td>
+				<td> <%= order.potato %> </td>
+				<td> $<%= order.cost %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= form_tag(remove_path) do%>
+	<h3>Would you like to remove an order from the list?</h3>
+	<p>Customer Name:<%= text_field_tag(:customerName) %></p>
+	<p> <%= submit_tag "Remove order"%></p>
+<% end %>
+
+<%= button_to "Go back to homepage", root_path%>
